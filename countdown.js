@@ -182,7 +182,7 @@ BellEvent.prototype.getDate = function getDate() {
 
 	date.setHours(this.hour);
 	date.setMinutes(this.minute);
-	date.setSeconds(secsOffset-17);
+	date.setSeconds(secsOffset-18);
 	return date;
 };
 
