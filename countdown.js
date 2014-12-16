@@ -30,8 +30,8 @@ var bells = [
 // Monday
 {
 	"hours":   [ 8,  8,  9, 10, 10, 11, 12, 13, 14, 14],
-	"minutes": [40, 50, 41, 32, 51, 42, 33, 13, 04, 55],
-	"desc": ["Rollcall", 1, 2, "Recess", 3, 4, "Lunch", 5,6, "School Ends"]
+	"minutes": [40, 50, 41, 32, 51, 42, 26, 13, 04, 55],
+	"desc": ["Rollcall", 1, 2, "Recess", 3, 4, "Bomb explodes", 5,6, "School Ends"]
 }];
 
 // Tuesday
