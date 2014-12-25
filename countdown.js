@@ -50,16 +50,16 @@ bells.push({
 
 // Thursday
 bells.push({
-	"hours": bells[0].hours.slice(),
-	"minutes": bells[0].minutes.slice(),
-	"desc": bells[0].desc.slice()
+	"hours":   [ 8,  8,  9, 10, 10, 11, 12, 13, 14],
+	"minutes": [40, 50, 41, 32, 51, 42, 33, 13, 04],
+	"desc": ["Rollcall", 1, 2, "Recess", 3, 4, "Lunch", 5, "School Ends"]
 });
 
 // Friday
 bells.push({
-	"hours":   [ 8,  8,  9, 10, 11, 11, 12, 12, 13, 14, 14],
-	"minutes": [40, 50, 34, 18, 00, 19, 03, 47, 27, 11, 55],
-	"desc": ["Rollcall", 1, 2, "Assembly", "Recess", 3, 4, "Lunch", 5,6, "School Ends"]
+	"hours": bells[0].hours.slice(),
+	"minutes": bells[0].minutes.slice(),
+	"desc": bells[0].desc.slice()
 });
 
 // extension classes, yay...
