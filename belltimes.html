@@ -46,7 +46,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="faq.html">FAQ</a></li>
 					<li><a href="edit.html">Edit timetable</a></li>
-					<li><a href="belltimes.html">Bell times</a></li>
+					<li class="active"><a href="belltimes.html">Bell times</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="http://hurlstone.com.au">HAHS website</a></li>
@@ -56,24 +56,11 @@
 	</div>
 
 	<div class="container">
-		<noscript>
-			<div class="alert alert-warning">
-				<p>You need JavaScript enabled to use this webapp!</p>
-			</div>
-		</noscript>
 
 		<div id="bell">
-			<p id="bell-in"><a href="belltimes.pdf">Click here to download the bell times</a></p>
-			<p id="bell-current" style="display:none"></p>
-			<p id="bell-descript">Something happens</p>
-			<p id="bell-in">in</p>
-			<p id="bell-countdown">a few seconds...</p>
+			<img src="belltimes.png" /><br><h4><a href="belltimes.pdf">Click here to download a PDF version of this. </a></h4>
 		</div>
 	</div>
 
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" async defer></script>
-	<script src="http://cdn.rawgit.com/hilios/jQuery.countdown/2.0.4/dist/jquery.countdown.min.js"></script>
-	<script src="countdown.js" async defer></script>
 </body>
 </html>
