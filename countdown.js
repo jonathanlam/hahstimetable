@@ -43,9 +43,9 @@ bells.push({
 
 // Wednesday
 bells.push({
-	"hours":   [ 8,  8,  9, 10, 11, 12, 12, 14],
-	"minutes": [40, 50, 42, 34, 08, 00, 40, 30],
-	"desc": ["Rollcall", 1, 2, "Recess", 3, "Lunch", "Sport", "School ends"]
+	"hours":   [ 8,  8,  9, 10, 10, 11, 12, 12, 14],
+	"minutes": [40, 50, 32, 14, 36, 18, 00, 40, 30],
+	"desc": ["Rollcall", 1, 2, "Recess", 3,4, "Lunch", "Sport", "School ends"]
 });
 
 // Thursday
