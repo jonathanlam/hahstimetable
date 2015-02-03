@@ -69,9 +69,16 @@
 			<p id="bell-in">in</p>
 			<p id="bell-countdown">a few seconds...</p>
 			Test:
-			<script>
+			<button onclick="bell()">Ring the Bell!</button><br />
+			<audio id="sound1" src="bell.mp3"></audio>
+			<script type="text/javascript">
+			var audio1 = document.getElementById('sound1');
+			function bell(){
+    audio1.play();
+}
+
 var day23 = new Date();
-var n23 = d.getDay();
+var n23 = day23.getDay();
 document.write( pNum.toString() );
 document.write( n23.toString() );
 </script>
