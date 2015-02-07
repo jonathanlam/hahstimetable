@@ -68,14 +68,14 @@
 			<p id="bell-descript">Something happens</p>
 			<p id="bell-in">in</p>
 			<p id="bell-countdown">a few seconds...</p>
-			Test:
-			<button onclick="bell()">Ring the Bell!</button><br />
+			
+			<button class="btn btn-primary" onclick="bell()">Ring the Bell!</button>
+			<button class="btn btn-primary" onclick="stopBell()">Stop bell!</button	><br>
 			<audio id="sound1" src="bell.mp3"></audio>
 			<script type="text/javascript">
 			var audio1 = document.getElementById('sound1');
-			function bell(){
-    audio1.play();
-}
+			function bell(){audio1.play();}
+			function stopBell(){audio1.pause();}
 
 var day23 = new Date();
 var n23 = day23.getDay();

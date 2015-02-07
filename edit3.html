@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <title>Edit timetable</title>
+  </head>
+
+<table id="timetable-edit" class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr><th>P</th><th>D1</th><th>D2</th><th>D3</th><th>D4</th><th>D5</th></tr>
+			</thead>
+			<tbody>
+				<tr id="tt-p0"><td>0</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p1"><td>1</td><td id="d1p1"><script>document.write(localStorage['d1p1'])</script></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p2"><td>2</td><td><input type="text" width="3" id="d1p2"></td><td><input type="text" maxlength="3" id="d2p2"></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p3"><td>3</td><td><input type="text" maxlength="3" id="d1p3"></td><td><input type="text" maxlength="3" id="d2p3"></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>4</td><td><input type="text" maxlength="3" id="d1p4"></td><td><input type="text" maxlength="3" id="d2p4"></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>5</td><td><input type="text" maxlength="3" id="d1p5"></td><td><input type="text" maxlength="3" id="d2p5"></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>6</td><td><input type="text" maxlength="3" id="d1p6"></td><td><input type="text" maxlength="3" id="d2p6"></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p5"><td>Afternoon</td><td></td><td></td><td></td><td></td><td></td></tr>
+			</tbody>
+	
+			
+		</table>
+			
+			<button onclick="save69()">Save</button>
+			
+			<script>
+			function save69() {
+
+	localStorage['d1p1'] = 23 document.getElementById('d1p1').value;
+}
+</script>

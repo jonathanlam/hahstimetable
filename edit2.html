@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Edit - HAHS Timetable</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">HAHS Timetable</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="faq.html">FAQ</a></li>
+					<li class="active"><a href="edit.html">Edit timetable</a></li>
+					<li><a href="belltimes.html">Bell times</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://hurlstone.com.au">HAHS website</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<noscript>
+			<div class="alert alert-warning">
+				<p>You need JavaScript enabled to use this webapp!</p>
+			</div>
+		</noscript>
+
+		<p>Enable the timetable features and then add your subjects!</p>
+
+		<div class="checkbox"><label><input type="checkbox" id="check-usetimetable" /> Use timetable?</label></div>
+
+		<button class="btn btn-primary" data-toggle="modal" data-target="#import">Import</button>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#export">Export</button>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#add-subject">Add subject</button>
+		<button class="btn btn-primary" onclick="doReset()">Reset</button>
+
+		<p>Click a period to edit it!</p>
+<h3>Week A:</h3>
+		<table id="timetable-edit" class="table table-striped table-bordered table-hover">
+			<thead><tr><th>Period</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr></thead>
+			<tbody>
+				<tr id="tt-p0"><td>Morning</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p1"><td>1</td><td id="d1p1"></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p2"><td>2</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p3"><td>3</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>4</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>5</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>6</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p5"><td>Afternoon</td><td></td><td></td><td></td><td></td><td></td></tr>
+			</tbody>
+			</div>
+			
+			<div>
+			<h3>Week B:</h3>
+		</table>
+			<table id="timetable-edit" class="table table-striped table-bordered table-hover">
+			<thead><tr><th>Period</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr></thead>
+			<tbody>
+				<tr id="tt-p0"><td>Morning</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p1"><td>1</td><td><script>document.write(localStorage['d1p1'])</script></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p2"><td>2</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p3"><td>3</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>4</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>5</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p4"><td>6</td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id="tt-p5"><td>Afternoon</td><td></td><td></td><td></td><td></td><td></td></tr>
+			</tbody>
+		</table>
+		</div>
+	</div>
+
+	<div id="import" class="modal fade" tabIndex="-1" role="dialog" aria-labelledby="modal-import-label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="modal-import-label">Import</h4>
+				</div>
+				<div class="modal-body">
+					<p>Paste your exported timetable data below and press "Save changes".</p>
+					<textarea id="text-import" class="form-control" rows="9"></textarea>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" onclick="save69()">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="export" class="modal fade" tabIndex="-1" role="dialog" aria-labelledby="modal-export-label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="modal-export-label">Export</h4>
+				</div>
+				<div class="modal-body">
+					<p>Copy your timetable data below and paste it in the import box within the browser you wish to use it on. This may include your phone or a laptop.</p>
+					<textarea id="text-export" class="form-control" rows="9"></textarea>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+function save69() {
+
+	localStorage['d1p1'] = document.getElementById('d1p1').value;
+}
+</script>
+	<!----<div id="add-subject" class="modal fade" tabIndex="-1" role="dialog" aria-labelledby="modal-add-subject-label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="modal-add-subject-label">Add subject</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="input-add-subject-name" class="col-sm-2 control-label">Subject</label>
+							<div class="col-sm-10"><input type="text" id="input-add-subject-name" class="form-control" autofocus required /></div>
+						</div>
+						<div class="form-group">
+							<label for="input-add-subject-room" class="col-sm-2 control-label">Room</label>
+							<div class="col-sm-10"><input type="text" id="input-add-subject-room" class="form-control" /></div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="doAddSubject()">Save</button>
+				</div>
+			</div>
+		</div>
+	</div> --->
+
+<!---	<div id="edit-subject" class="modal fade" tabIndex="-1" role="dialog" aria-labelledby="modal-add-subject-label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="modal-edit-subject-label">Edit subject</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<select for="select-edit-subject" class="col-sm-2 control-label">Subject</label>
+							<div class="col-sm-10"><select type="text" id="select-edit-subject" autofocus></select></div>
+						</div>
+						<div class="form-group">
+							<label for="input-edit-subject-room" class="col-sm-2 control-label">Room</label>
+							<div class="col-sm-10"><input type="text" id="input-edit-subject-room" class="form-control" /></div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="doDelSubject()">Delete</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="doEditSubject()">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>----->
+
+	<!---<div id="edit-period" class="modal fade" tabIndex="-1" role="dialog" aria-labelledby="modal-period-label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="modal-period-label">Editing <span id="edit-period-day"></span> period <span id="edit-period-num">#</span></h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="select-period-subject" class="col-sm-2 control-label">Subject</label>
+							<div class="col-sm-10"><select id="select-period-subject" class="form-control" autofocus></select></div>
+						</div>
+						<div class="form-group">
+							<label for="input-period-room" class="col-sm-2 control-label">Room</label>
+							<div class="col-sm-10"><input type="text" id="input-period-room" class="form-control" /></div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="doClearPeriod()">Clear</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="savePeriod()">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>--->
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" async defer></script>
+	<script src="edit-timetable.js" async defer></script>
+</body>
+</html>

@@ -8,12 +8,12 @@ $(function () {
 		return false;
 	}
 
-	if (localStorage.useTimetable) {
+	/*if (localStorage.useTimetable) {
 		document.getElementById("check-usetimetable").checked = true;
 	} else {
 		document.getElementById("check-usetimetable").checked = false;
 		disablePage();
-	}
+	}*/
 
 	$("#check-usetimetable").click(toggleUseTimetable);
 
