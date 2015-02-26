@@ -188,7 +188,7 @@ BellEvent.prototype.getDate = function getDate() {
 
 BellEvent.getNext = function getNext() {
 	var now = new Date();
-	now.setSeconds(now.getSeconds() + secsOffset + 10);
+	now.setSeconds(now.getSeconds() + secsOffset + 10+10+10);
 
 	var term = getTerm(now);
 	if (!(term & 1)) {
@@ -263,7 +263,7 @@ function setCountdown(ev) {
 // school computers don't even know what time it is
 
 // amount of time system clock is ahead by
-var secsOffset = 10;
+var secsOffset = 0;
 
 function getRealTime() {
 	$.ajax({
