@@ -188,7 +188,7 @@ BellEvent.prototype.getDate = function getDate() {
 
 BellEvent.getNext = function getNext() {
 	var now = new Date();
-	now.setSeconds(now.getSeconds() + secsOffset + 10+10+10);
+	now.setSeconds(now.getSeconds() + secsOffset + 10);
 
 	var term = getTerm(now);
 	if (!(term & 1)) {
