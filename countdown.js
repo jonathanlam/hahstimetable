@@ -263,7 +263,7 @@ function setCountdown(ev) {
 // school computers don't even know what time it is
 
 // amount of time system clock is ahead by
-var secsOffset = 0;
+var secsOffset = 10;
 
 function getRealTime() {
 	$.ajax({
